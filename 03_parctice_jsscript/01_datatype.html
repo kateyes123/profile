@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형</title>
+</head>
+<body>
+    <h1>자료형</h1>
+    <button onclick="test1();">test1</button>
+    <script>
+        /**
+         * 자료형
+         * 
+         */
+        function test1() {
+            //변수 선언 
+            //const(상수) let(변수) 두가지 변수선언 키워드 
+            let a; // 자료형이 지정되지 않음 
+            console.log(typeof a ,a); //undefined undefined 이것또한 하나의 자료형이라고 보면된다. 
+
+            // 값대입 : 값을 통해 자료형 지정 Dynamic Typing
+            // a = "안녕"; // 문자형 변수로 지정됨 
+            // a = 333; // 정수형 변수로 지정됨 
+            a = true; // boolean형으로 지정됨
+            // 위에서 보듯 모든 형식이 자유로움 
+            console.log(typeof a,a);
+
+
+            // 자료형 
+            // - string 문자열 ' ', " "
+            const str = "abc";
+            console.log(typeof str,str); // 실제 스트르에 스트르 내용을 보여주세요 
+            // - number
+            const num = 123;
+            console.log(typeof num, num); // number123
+            // - boolean
+            const bool = false;
+            console.log(typeof bool, bool); //boolean false
+            // - object
+            const obj = {
+                name : '홍길동',
+                n : 123.456,
+                married : true,
+                hobby : ['축구','농구'],
+                foo : function(){
+                    console.log('obj.foooooooooooooooo')
+                },
+                freind : {
+                    name : '고길동'
+                }
+            };
+            console.log(typeof obj,obj);
+            console.log(obj.hoby);
+            console.log(obj.foo);
+            console.log(obj.freind);
+
+            const today = new Date();
+            console.log(typeof today,today);
+
+            const arr = [1,2,3];
+            console.log(typeof arr,arr);
+            console.log(arr[0], arr[1], arr[2]); 
+            // - function - 하나의 타입이다. 
+            function foo(){ 
+                console.log('foooooooooooooooooooooooo');
+            }
+            console.log(typeof foo,foo); // foo를 출력 하는게 아니라 실헹한다 (함수를 찍은거)
+            foo(); // 함수 호출 
+
+
+            // - undefined
+            let h;
+            console.log(typeof h,h); //undefined undefined 값을 초기화 할 목적으로 사용함 
+
+            let m = 123;
+            m = undefined;
+            console.log(typeof m,m); //undefined undefined 
+        }
+    </script>
+    
+</body>
+</html>

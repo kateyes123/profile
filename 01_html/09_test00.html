@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>공지사항 작성하기</legend>
+        <label for="title">제목  </label>
+        <input type="text" id="title" name="title"  placeholder="제목을 입력하시오" >
+        
+       <br>
+        <label id="center" for="content" >내용 </label> 
+        
+        <textarea  name="content" id="content" cols="20" rows="10" placeholder="내용을 입력하시오" style="resize:none;"  >내용을 입력하십시오
+        </textarea>
+
+        <br>
+        <br>
+        <label for="upFile">첨부파일  </label>
+        <input type="file" name="upFile" id="upFile">
+        <br><br>
+        <button id="box" type="submit" >작성하기</button>
+      </fieldset>
+     <style>
+         #box{
+            margin: 0 auto;
+         }
+         #center{
+            vertical-align:top
+         }
+     </style>
+     
+
+</body>
+</html>

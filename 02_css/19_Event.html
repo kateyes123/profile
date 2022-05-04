@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script>
+        /**
+         * window.onload - html문서의 DOM등록 완료시 방생하는 이벤트 
+         * 
+         * window.onload 와  body.onload
+         */
+        window.onload = ()=> {
+            alert('페이지 롤딩이 완료되었습느다. 1');
+            f();
+
+        };
+        window.addEventListener('load', ()=>{
+            alert('페이지 로딩이 완료외었습니다. 2')
+        });
+        const init = () => {
+            alert('페이지 로딩이 완료되었습니다. 3');
+        };
+        </script>
+</head>
+
+<body onload="init();">
+    <h1>Event</h1>
+    <!--
+         웹페이지에서 일어나는 사용자의 action,네트우크상의 처리 상테 변화 등이 모두 하나의 이벤트로 관리 된다. 
+         이벤트가 밸생하면 미리 등록된 이벤트 헨들러 (이벤트리스터)에 의해 다음처리ㅏㄱ 일어난다. 
+         A->B
+
+         1. html요소의  inline 이벤트 속성에 작성 
+         2. html요소의 이벤트 속성에 함수 바인딩 
+         3. html요소.addEventListener(event,listener) - n개의 listener등록가능 
+    -->
+    <button id="btn1" onclick="test1();">클릭미 #btn1</button>
+    <button id="btn2" >클릭미 #btn2</button>
+    <button id="btn2-1" >클릭미 #btn2 이벤트핸들러 제거 </button>
+    <button id="btn3" >클릭미 #btn3</button>
+    <button id="btn3-1" >#btn3 이벤트핸들러 제거 </button>
+    <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">https://www.w3schools.com/tags/ref_eventattributes.asp</a>
+    <script>
+        /**
+         * html태그이  inline속성에 작성하기 
+         * button태그이 clidk(A)가 발생하면, test1호출(B)해라 
+         */
+        const test1 = () =>{
+          console.log("test1");
+          console.log(btn1.onclick);
+        };
+        /**
+         *  2. html요소의 이벤트 속송 (on xxx) 에 함수 바인딩
+         */
+        const bar = () => {
+            console.log("test2");
+            console.log(btn2.onclick);
+        }
+        //btn2.onclick = bar(); //bar 호출결과 (리턴값)를 onclick에 바인딩 
+        brtn2.onclick = bar;
+        btn2.onclick = () => {
+            console.log("test2");
+            console.log(btn2,onclick);
+        };
+        document.querySelector("#btn2-1").onclick = () => {
+            console.log("#btn2 이벤트핸들러 제거 ! : ", btn2.onclick);
+            btn2.onclick = undefined;
+        };
+        /**
+         * 3. html요소 .addEventListener(event, listener) -n개의 listener등록 가능 
+         * 
+         * 크롬개발도우 : getEventListeners(documetn.querySelector("#btn3"));
+         */
+        btn3.addEventListener('click',()=>{
+            console.log("test3-1");
+        });
+        btn3.addEventListener('click',()=>{
+            console.log("test3-2");
+        });
+
+        document.querySelector("#btn3-1").addEventListener = () => {
+            console.log('이벤트핸들러 제거 : ',f);
+            //제거할 함수를 함께 전달 
+            btn3.removeEventListener('click',f);
+        };
+
+
+    </script>
+    <button id="btn4">이미지 로딩</button>
+    <div class="imp-wrapper" style="border: 1px solid gray; margin: 10px 0;"></div>
+    <script>
+        /**
+         * @실습문제 : 이미지 동적로딩
+         * - 동적으로 이미지 태그를 생성하고 , 이미지 로딩이 완료되면 ' 이미지라 로딩되었습니다.' alert처리할 것
+         * - documet.createElement로 img 태그 생성할 것 
+         * - simple/image/???
+         */
+        btn4.onclick = () => {
+            const img = document.ctreateElement('img');
+            img.src = '.../sample/image/flower1.png';
+            img.style.width = '100%';
+            img.style.borderRadius = '50%';
+            img.onload = () => {
+                alert('이미지가 로딩되었습니다.');
+            };
+            document.querySelector("div.img-wrapper").append(img);
+            alert('이미지가 로딩되었습니다. 1');
+ 
+        }
+    </script>
+    <button onclick="btn5">이벤트객체 | 이벤트발생객체 </button>
+    <script>
+        /**
+         * 이벤트객체 - 이벤트관련 정보 (타입, 발생위치,...)를 가진 객체 
+         * 이벤트 발생객체 - 이벤트 객체 .target속성 참조  
+         * 
+         * this용법6. 이벤트 핸들러 함수(일반함수)안의  this는 이벤트 발생객체를 가리킨다.
+         */
+        // 6. 이벤트 핸들러 함수 (일반함수)안의 this는 이벤트발생긱체를 가리킨다. 
+        btn5.onclick = function(e) {
+            console.log(e);
+            const {target} = e;
+            console.log(target); // 이벤트 발생객체 #btn5
+            console.log(this); // 이벤트 발생객체 #btn
+            console.log(target === this); // true
+
+            //이벤트 발색객체의 정보가져오기 
+            console.log(target.value);
+            console.log(this.value);
+        }
+    </script>
+     <form action="" name="usernameFrm" onsubmit="return false;">
+    <fieldset>
+        <legend>form event</legend>
+        <input type="text" name="username" id="username" placeholder="username을 입력하세요">
+        <input type="text" in="usernameCopy" readonly>
+        <input type="submit" value="제출">
+    </fieldset>
+    </form>
+    <script>
+        username.addEventListener('focus', (e) => {
+            console.log(e); //focusevent 
+            console.log(e.target, e.type);
+
+            if(e.target.value.lenght == 0){
+                alert("username을 입력해주세요 ")
+            }
+        });
+
+        username.addEventListener('keydown', (e) => {
+            console.log(e.type);
+        });
+        username.addEventListener('keypress', (e) => {
+            console.log(e.type, e.keyCode, e.key, e.code);
+        });
+        username.addEventListener('keyup', (e) => {
+            console.log(e.type);
+             // 사용자 입력값 처리 
+            
+            // 엔터입력 감지 
+            if(e.keyCode === 13){
+                alert("엔터를 입력 하셨습니다.");
+                usernameCopy.innerHTML = e.target.value;
+                
+            }
+
+        });
+        /**
+         * Form submit 이벤트 
+         * - 실제 서버로 제출되기 전에 발생 
+         * - 사용자 입력값에 대한 유효성 검사 
+         * - form[name] 은 document 하위에 바로 관리된다. 
+         */
+        document.usernameFrm.onsubmit('submit',(e) => {
+            console.log(e.type);
+            //입력값 검사
+
+            return false; // 폼제출방지 
+            e.preventDefault();
+        })
+    </script>
+
+    <h2>Event Propagation 이벤트 전파</h2>
+    <!--
+        bubbling자식요소에서 발생한 이벤트가 부모로 전파된다. (기본방식)
+        capturing 부모요소의 이벤트가 자식요소에게 전파된다. 
+    -->
+    <div class="bubble bubble1">
+      <div class="bubble bubble2">
+
+    </div>
+
+
+    
+</body>
+</html>

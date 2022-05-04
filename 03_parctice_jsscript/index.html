@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript</title>
+  <script src="js/main.js"></script>
+  <script>
+    //자바 스크립트 작성 영역 
+    // const a = 123;
+    // alert(a);
+    //함수선언 
+    function foo(){
+      console.log('foo 실행!'); //브라우져 개발도구 console탭에 출력 
+    }
+    foo(); //함수 호출해주기 
+  </script>
+</head>
+<body>
+  <!-- 자바랑 연관선이 하나도 없음 그냥 유명도를 따라서 javascript라고 하는거임 일절 연관성 없음 비슷하긴하지만 -->
+  <h1>Javascript</h1> 
+  <ul>
+    <li>1.내부scriopt를 작성</li>
+    <li>html이벤트 속성
+      <button onclick="alert('버튼클릭했구나이'); foo(); bar();">클릭해라</button>
+    </li>
+    <li>외부 script작성하고 가져와 사용하기 </li>
+  </ul>
+
+  <h2>브라우저에서 javascript를 사용하는 3가지 방법 </h2>
+  <ul>
+    <li><a href="01_datatype.html"></a></li>
+    <li><a href="02_access_dom.html">DOM에 접근하기</a></li>
+  </ul>
+
+  <script>
+    //2.자바스크립트 작성영역 
+    const b = 456;
+    alert(b);
+  </script>
+  
+</body>
+</html>
