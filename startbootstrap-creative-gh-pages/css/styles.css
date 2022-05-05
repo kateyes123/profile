@@ -11303,11 +11303,15 @@ body {
   padding: 8rem 0;
 }
 
+.page-section.type-divide { 
+  border-top: 10px solid #f8f8f8;
+}
+
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75) !important;
 }
 
-.btn-xl {
+.btn.btn-xl {
   padding: 1.25rem 2.25rem;
   font-size: 0.85rem;
   font-weight: 700;
@@ -11360,14 +11364,15 @@ hr.divider-light {
     color: rgba(0, 0, 0, 0.7);
   }
   #mainNav .navbar-brand:hover {
-    color: #fff;
+    /* color: #fff; */
+    color: #f4623a;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
     color: rgba(0, 0, 0, 0.7);
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
+    /* color: #fff; */
   }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
@@ -11591,8 +11596,8 @@ progress[value] {
   -webkit-appearance: none;
    appearance: none;
 
-  width: 250px;
-  height: 20px;
+  width: 400px;
+  height: 40px;
 }
 
 progress[value]::-webkit-progress-value {
@@ -11696,8 +11701,8 @@ button:hover {
 
 /* Style the horizontal ruler */
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+  border-top: 1px solid #fff;
+  margin: 50px 0;
 }
  
 /* The Close Button (x) */
@@ -11735,7 +11740,7 @@ hr {
 
 
 
-.introducepage {  display: grid;
+/* .introducepage {  display: grid;
   grid-template-columns: 0.6fr 2.4fr 0.5fr;
   grid-template-rows: 1fr 52% 1fr 1fr;
   gap: 3px 0px;
@@ -11746,18 +11751,18 @@ hr {
     "picture picture picture"
     "package_pic package_pic ."
     "text_pic text_pic .";
-}
+} */
 
-.picture_pic img { 
+/* .picture_pic img { 
   grid-area: picture_pic;
     margin-top: -8.5625rem;
     max-height: 131%;
     width: 566%;
     height: 127%;
   
-}
+} */
 
-.face img{ 
+/* .face img{ 
   grid-area: face; 
   margin: 0.4375rem;
   max-width: 4.6875rem;
@@ -11787,7 +11792,7 @@ font-size: 18px;
   margin-top:-80px;
   min-width: 40rem;
   
-}
+} */
 
 
 
@@ -11837,7 +11842,8 @@ html, body {
   height: 100%;
   margin: 0;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
 }
 
 .card-list {
@@ -11967,7 +11973,7 @@ a.btn:active {
   transition: all 0.025s 0s ease-out;
 }
 div.cards {
-  margin: 80px auto;
+  margin: 40px auto;
   max-width: 960px;
   text-align: center;
 }
@@ -12097,5 +12103,116 @@ div.card.show div.flap2 {
   transition: all 0.3s 0.2s ease-out;
 }
 
+.bi-wordpress:before {
+  content: "\F669"
+}
 
+.box-base {
+  background: #f6f8f9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: calc(var(--bs-gutter-x) * 1);
+}
 
+.fitness-figure {
+  z-index: 10;
+  position: relative;
+  transform: rotate(5deg);
+  margin-bottom: 100px;
+  text-align: center;
+}
+.fitness-figure:after {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  display: block;
+  background: linear-gradient(to top, #fff 0%, rgba(255,255,255,0) 90%);
+  content: "";
+}
+.fitness-figure img {
+  width: 100%;
+  max-width: 900px;
+}
+
+.box-tit {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.bul-dot { /* 초기화 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bul-dot > li {
+  position: relative;
+  padding: 0 0 0 10px;
+  margin: 10px 0 0;
+  font-size: 16px;
+}
+.bul-dot > li:before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: #222;
+  border-radius: 50%;
+  content: "";
+}
+.bul-dot > li:first-child {
+  margin-top: 0;
+}
+
+.insta-area {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0, 0.1);
+  margin-bottom: 20px;
+}
+.insta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.insta-header .face {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.insta-header .face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.insta-header .name {
+  flex: 1 1 auto;
+}
+.insta-header .dot {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+}
+.insta-header .dot img {
+  display: block;
+  width: 100%;
+}
+.insta-photo {
+  width: 100%;
+}
+.insta-photo img {
+  width: 100%;
+}
+.insta-utils {
+  padding: 20px;
+}

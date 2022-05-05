@@ -11,19 +11,23 @@
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <script src="./js/lib/jquery-3.6.0.js"></script>
+        <script src="./js/scripts.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Foward</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <h1><a class="navbar-brand" href="#page-top">Foward</a></h1>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="display:none"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0" id="submenu">
                         <li class="nav-item"><a class="nav-link" href="#Introduce">INTRODUCE</a></li>
@@ -35,9 +39,9 @@
                
                     <!-- [팝] 로그인 -->
                     <div id="id01" class="modal">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                         <form class="modal-content animate" action="/action_page.php" method="post">
                         <div class="imgcontainer">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                             <h2><strong>로그인</strong></h2>
                         </div>
                     
@@ -70,9 +74,10 @@
                     <div id="id02" class="modal">
                         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                         <form class="modal-content" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <h2><strong>회원가입</strong></h2>
+                        </div>
                         <div class="container">
-                            <h1>회원가입</h1>
-                            <hr>
                             <label for="email"><b>아이디</b></label>
                             <input type="text" placeholder="아이디 입력" name="email" required>
                     
@@ -99,7 +104,7 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-black font-weight-bold">I like criticism. <br> It makes you strong.</h1>
+                        <h2 class="text-black font-weight-bold">I like criticism. <br> It makes you strong.</h2>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
@@ -110,489 +115,282 @@
             </div>                                        
         </header>
         <!-- About-->
-        <section class="page-section bg-ligth" id="Introduce">
+        <section class="page-section type-divide" id="Introduce">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">INTRODUCE</h2>
-                        <hr class="divider divider-light" />
-                        <!-- <h1>자기소개</h1>
-                        <h2 class="text-white-75 mb-4">안녕하세요 김경한입니다.</h2>
-                        <div style="width:200px; height:150px;  float:left;">
-                        
-
-                    <div style="width:100px; height:150px; float:left;">
-                       <ol class="introducetag">
-                           <li>#여행</li>
-                           <li>#운동</li>
-                           <li>#요리</li>
-                           <li>#맛집</li>
-                           <li>#물놀이</li>
-                           <li>#유튜브 시청</li>
-                       </ol>                     
+                    <div class="text-center">
+                        <h2>INTRODUCE</h2>
                     </div>
-                    <div>
-                        <h2>나의 MBTI는? ENFJ</h2>
-
-                    </div> -->
-                    <!-- <header class="introducepage">
-                        <div id="profile_pic">
-                          <img src="assets/img/me.PNG">
-                        </div>
-                        <div id="profile_name">
-                          <p>
-                            <span class="boldic big">KimKyungHan<br></span>
-                            <span class="small">a novice developer</span>
-                          </p>
-                        </div>
-                        <div id="dotdotdot">
-                          <input type="checkbox" id="dotBtn">
-                          <label for="dotBtn" class="dotBtn"><img src="assets/img/dot.png" /></label>        
-                        </div>
-                        <div class="introducepage1">
-                            <div id="profile_pic2">
-                               <img src="assets/img/newwork.JPG" >
+                    <hr class="divider divider-light" />
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7 col-md-6">
+                            <div class="insta-area">
+                                <div class="insta-header">
+                                    <div class="face">
+                                        <img src="assets/img/me.PNG">
+                                    </div>
+                                    <div class="name">
+                                        <span class="boldic big">KimKyungHan<br></span>
+                                        <span class="small">a novice developer</span>
+                                    </div>
+                                    <div class="dot">
+                                        <img src="assets/img/dot.png" />
+                                    </div>
+                                </div>
+                                <div class="insta-photo">
+                                    <img src="assets/img/newwork.JPG" >
+                                </div>
+                                <div class="insta-utils" >
+                                    <img src="assets/img/hma.png" width="120">
+                                </div>
                             </div>
-                          </div>
-                      </header> -->
-
-                      <div class="introducepage">
-                        <div class="face">
-                            <img src="assets/img/me.PNG">
                         </div>
-                        <div class="name">
-                            <p>
-                                <span class="boldic big">KimKyungHan<br></span>
-                                <span class="small">a novice developer</span>
-                              </p>
-                        </div>
-                        <div class="dot">
-                            <img src="assets/img/dot.png" />
-                        </div>
-                        <div class="picture_pic">
-                            <img src="assets/img/newwork.JPG" >
-                        </div>
-                        <div class="package_pic" >
-                            <img src="assets/img/hma.png" width="120" height="40">
-                        </div>
-                        <div class="text_pic">
-                            <p class="boldic big">
-                                <span class="boldic big">KimKyungHan (자기소개)<br></span>
-                                서울 동대문에 살고 있는 1995년생 28살 김경한입니다. <br> 
-                                저의 취미는 <br>
-                                <strong>#여행 #운동 #요리 #맛집 #물놀이 #영화 #유튜브_물고기시청 #수영</strong> 이 있습니다. <br>
-                                여기서 특히 여행이나 운동 등 활동적인 체험을 즐깁니다. <br>
-                                .<br>.<br>.<br>
-                                KH 정보 교육원에서 수업을 듣고 있습니다. <br>
-                                (나의 광고포함) #여행#운동#요리 #맛집#물놀이#유튜브<br>
-                            </p>
+                        <div class="col-lg-5 col-md-6">
+                            <div class="text_pic">
+                                <p class="boldic big">
+                                    서울 동대문에 살고 있는 95년생 김경한입니다. <br> 
+                                    취미는 <strong>#여행 #운동 #요리 #맛집 #물놀이 #영화 #유튜브_물고기시청 #수영</strong>입니다. <br>
+                                    특히 여행이나 운동 등 활동적인 체험을 즐깁니다. 💪 <br>
+                                    .<br>.<br>.<br>
+                                    KH 정보 교육원에서 수업을 듣고 있습니다. <br>
+                                    (나의 광고포함) #여행#운동#요리 #맛집#물놀이#유튜브<br>
+                                </p>
+                            </div>
                         </div>
                       </div>
                      
-
-                        <br>
-                        <a class="btn btn-light btn-xl" href="#Services">LOAD-MAP</a>
+                        <div class="text-center mt-4"><a href="#Services" class="btn btn-primary btn-xl" id="submitButton" type="submit">GO LOAD-MAP</a></div>
                     </div>
                 </div>
             </div>
-            
-            
-          
-           
         </section>
         <!-- Services-->
-        <section class="page-section" id="Services">
-            <div class="container px-4 px-lg-5">
-                <!-- <h2 class="text-center mt-0">LOAD MAP</h2>
-                <h3 class="text-center mt-0">초보 개발자로써 해나가야 하는부분!!</h3>
+        <section class="page-section bg-dark text-white" id="Services">
+            <div class="container px-5 px-lg-5">
+                <h2 class="text-center mt-0">LOAD MAP</h2>
+                <h3 class="text-center mt-0">필수 역량</h3>
                 <hr class="divider" />
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi bi-lightbulb-fill fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">지식</h3>
-                            <p class="text-muted mb-0">용어에 대한 지식</p>
-                            <li>정확하게 전달 할수 있는 장점으로 익혀야 한다.</li>
-                            <li>개발자는 전문용어를 많이 사용한다. 상대방의 용어를 이해할 수 있도록 용어에 대한 지식을 갖추어 나가자</li>
-                            <li></li>
+                            <p class="text-center">용어에 대한 지식</p>
+                            <ul class="text-start">
+                                <li>정확하게 전달 할수 있는 장점으로 익혀야 한다.</li>
+                                <li>개발자는 전문용어를 많이 사용한다. 상대방의 용어를 이해할 수 있도록 용어에 대한 지식을 갖추어 나가자</li>
+                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi bi-search fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">문제 해결 능력</h3>
-                            <p class="text-muted mb-0">문제가 무엇인지 알아내는 능력.</p>
-                            <li>컴퓨터적인 생각을 할 줄 알아야 하고 알고리즘과 자료구조에 대한 지식이 뒷받침</li>
-                            <li>다양한 경험의 뒷바침</li>
-                            <li>복잡함을 단순한 구조로 나타낸 뒤, 분해하고 자료로 정리 & 구분하는 능력</li>
+                            <p class="text-center">문제가 무엇인지 알아내는 능력.</p>
+                            <ul class="text-start">
+                                <li>컴퓨터적인 생각을 할 줄 알아야 하고 알고리즘과 자료구조에 대한 지식이 뒷받침</li>
+                                <li>다양한 경험의 뒷바침</li>
+                                <li>복잡함을 단순한 구조로 나타낸 뒤, 분해하고 자료로 정리 & 구분하는 능력</li>
+    
+                            </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <div class="mb-2"><i class="bi bi-people-fill fs-1 text-primary"></i></div>
                             <h3 class="h4 mb-2">태도</h3>
-                            <p class="text-muted mb-0">피드백을 겸손하게 받아드리는 태도</p>
-                            <li>지적을 받아드릴 줄 알고 겸손하게 반응하며 교정할 줄 알아야 한다.</li>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Explanation</h3>
-                            <p class="text-muted mb-0">설명할 수 있어야 한다.</p>
-                            <li>설명할 수 없다면 모르는 상태와 같다.</li>
-                            <li>설명할 수 있을때 까지 공부하자</li>
+                            <p class="text-center">피드백을 겸손하게 받아드리는 태도</p>
+                            <ul class="text-start">
+                                <li>지적을 받아드릴 줄 알고 겸손하게 반응하며 교정할 줄 알아야 한다.</li>
+                            </ul>
                             
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
-                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Record</h3>
-                            <p class="text-muted mb-0">자신의 공부 했던 일 기록하자.</p>
-                            <li>사람은 자신이 한 것에 대해 잘 잊고, 착각하기 쉽기 때문에 기록하는 것이 중요하다.</li>
-                            <li>지속적으로 내가한 기록들을 보강해가야 한다.</li> 
+                            <div class="mb-2"><i class="bi bi-pencil-fill fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">설명</h3>
+                            <p class="text-center">설명할 수 있어야 한다.</p>
+                            <ul class="text-start">
+                                <li>설명할 수 없다면 모르는 상태와 같다.</li>
+                                <li>설명할 수 있을때 까지 공부하자</li>  
+                            </ul>
+                            
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h3>나의 지금 실력 !!</h3>
-                    JAVA <progress id="progressID" value="10" max="100"> </progress> <br>
-                    SQL<progress id="progressID" value="20" max="100"> </progress> <br>
-                    HTML<progress id="progressID" value="30" max="100">  </progress> <br>
-                    CSS<progress id="progressID" value="20" max="100"></progress> <br>
-                    JAVASCRIPT<progress id="progressID" value="10" max="100"></progress> <br>                  
+                <hr>
+                <div class="text-center">
+                    <h3 class="mb-5">MY SKILLS</h3>
+                   
+                    <p data-value="15">JAVA</p>
+                                   <progress id="progressID" value="15" max="100">15%</progress> <br>
+                    <p data-value="15">SQL</p>
+                                    <progress id="progressID" value="20" max="100">20%</progress> <br>
+                    <p data-value="15">HTML </p>
+                                  <progress id="progressID" value="30" max="100">30%</progress> <br>
+                    <p data-value="15"> CSS  </p>
+                                 <progress id="progressID" value="20" max="100">20%</progress> <br>
+                    <p data-value="15">JAVASCRIPT</p>
+                             <progress id="progressID" value="10" max="100">10%</progress> <br>                  
+    
+                    
                 
-            </div> -->
+                </div>  
 
-            <div class="cards">
-
-                <div class="card">
-                  <div class="card__image-holder">
-                    <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
-                  </div>
-                  <div class="card-title">
-                    <a href="#load" class="toggle-info btn">
-                      <span class="left"></span>
-                      <span class="right"></span>
-                    </a>
-                    <h2>
-                        Card title
-                        <small>Image from unsplash.com</small>
-                    </h2>
-                  </div>
-                  <div class="card-flap flap1" >
-                    <div class="card-description">
-                      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
-                    </div>
-                    <div class="card-flap flap2">
-                      <div class="card-actions">
-                        <a href="#load" class="btn">Read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="card">
-                  <div class="card__image-holder">
-                    <img class="card__image" src="https://source.unsplash.com/300x225/?beach" alt="beach" />
-                  </div>
-                  <div class="card-title">
-                    <a href="#" class="toggle-info btn">
-                      <span class="left"></span>
-                      <span class="right"></span>
-                    </a>
-                    <h2>
-                        Card title
-                        <small>Image from unsplash.com</small>
-                    </h2>
-                  </div>
-                  <div class="card-flap flap1">
-                    <div class="card-description">
-                      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
-                    </div>
-                    <div class="card-flap flap2">
-                      <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="card">
-                  <div class="card__image-holder">
-                    <img class="card__image" src="https://source.unsplash.com/300x225/?mountain" alt="mountain" />
-                  </div>
-                  <div class="card-title">
-                    <a href="#" class="toggle-info btn">
-                      <span class="left"></span>
-                      <span class="right"></span>
-                    </a>
-                    <h2>
-                        Card title
-                        <small>Image from unsplash.com</small>
-                    </h2>
-                  </div>
-                  <div class="card-flap flap1">
-                    <div class="card-description">
-                      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
-                    </div>
-                    <div class="card-flap flap2">
-                      <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="card">
-                  <div class="card__image-holder">
-                    <img class="card__image" src="https://source.unsplash.com/300x225/?field" alt="field" />
-                  </div>
-                  <div class="card-title">
-                    <a href="#" class="toggle-info btn">
-                      <span class="left"></span>
-                      <span class="right"></span>
-                    </a>
-                    <h2>
-                        Card title
-                        <small>Image from unsplash.com</small>
-                    </h2>
-                  </div>
-                  <div class="card-flap flap1">
-                    <div class="card-description">
-                      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
-                    </div>
-                    <div class="card-flap flap2">
-                      <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="card">
-                  <div class="card__image-holder">
-                    <img class="card__image" src="https://source.unsplash.com/300x225/?water" alt="water" />
-                  </div>
-                  <div class="card-title">
-                    <a href="#" class="toggle-info btn">
-                      <span class="left"></span>
-                      <span class="right"></span>
-                    </a>
-                    <h2>
-                        Card title
-                        <small>Image from unsplash.com</small>
-                    </h2>
-                  </div>
-                  <div class="card-flap flap1">
-                    <div class="card-description">
-                      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
-                    </div>
-                    <div class="card-flap flap2">
-                      <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="card">
-                  <div class="card__image-holder">
-                    <img class="card__image" src="https://source.unsplash.com/300x225/?river" alt="river" />
-                  </div>
-                  <div class="card-title">
-                    <a href="#" class="toggle-info btn">
-                      <span class="left"></span>
-                      <span class="right"></span>
-                    </a>
-                    <h2>
-                        Card title
-                        <small>Image from unsplash.com</small>
-                    </h2>
-                  </div>
-                  <div class="card-flap flap1">
-                    <div class="card-description">
-                      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
-                    </div>
-                    <div class="card-flap flap2">
-                      <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="card">
-                  <div class="card__image-holder">
-                    <img class="card__image" src="https://source.unsplash.com/300x225/?kite" alt="kite" />
-                  </div>
-                  <div class="card-title">
-                    <a href="#" class="toggle-info btn">
-                      <span class="left"></span>
-                      <span class="right"></span>
-                    </a>
-                    <h2>
-                        Card title
-                        <small>Image from unsplash.com</small>
-                    </h2>
-                  </div>
-                  <div class="card-flap flap1">
-                    <div class="card-description">
-                      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
-                    </div>
-                    <div class="card-flap flap2">
-                      <div class="card-actions">
-                        <a href="#" class="btn">Read more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                </div>
+             
             </div>
         </section>
         <!-- Portfolio-->
-        <div id="portfolio">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="hobby">
-                            <h1> 취미는 헬스 </h1>
-                                <li>목표는: 3대 500을 넘고 싶습니다. </li>
-                                
-                               
+        <section class="page-section" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2> <strong>HOBBY</strong> </h2>                       
+                </div>
+
+                <hr class="divider">
+
+                <div class="travel-area">
+                    <h3 class="text-center">여행</h3>
+                    <div class="cards">
+
+                        <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="assets/img/newwork (2).JPG" alt="wave" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                    <span class="left"></span>
+                                    <span class="right"></span>
+                                </a>
+                                <h4>
+                                    NEWWORK
+                                    <small>2017.01.10</small>
+                                </h4>
+                            </div>
+                            <div class="card-flap flap1" >
+                                <div class="card-description">
+                                    겨울에 뉴욕 1주, 2주 여행 <br>
+                                    여행기간이 길었던 만큼 하루 1 맛집은 필수로 다녀온 여행
+                                </div>
+                                <div class="card-flap flap2">
+                                    <div class="card-actions">
+                                        <a href="#" class="btn">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="hobby500">
-                            <h2>쇠의 길 </h2>
-                            <h2> 어느 순간부터 하게 되었나?  </h2>
-                            <li> 우연하게 알게된 헬스장 형님과의 만남으로 나의 3대 운동을 시작했다.</li>
-                            <li> 나의 새로운 헬스인생 시작되었다.</li>
-                            <li></li>
-                            <h2>3대 운동을 하는 이유?</h2>
-                            <p> 일반적인 웨이트 트레이닝은 다관절, 단관절 운동으로 나눌 수 있다. </p> 
-                            <p>단관절 운동이란? 1개의 관절만 사용하여 동작을 취하는 운동 (고립운동)</p>
-                            <p>팔굽혀펴기 턱걸이 등 여러 관절이 동원되는 운동 (다관절운동)</p>
+                        
+                        <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="assets/img/philipin.jpg" alt="beach" />
+                            </div>
+                            <div class="card-title">
+                            <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                            </a>
+                            <h4>
+                                PHILIPIN
+                                <small>2018.09.18</small>
+                            </h4>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                    <div class="card-actions">
+                                        <a href="#" class="btn">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h2>다관절 운동 장점 </h2>
+                        
+                        <div class="card">
+                            <div class="card__image-holder">
+                            <img class="card__image" src="assets/img/bat.jpg" alt="mountain" />
+                            </div>
+                            <div class="card-title">
+                            <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                            </a>
+                            <h4>
+                                Vietnam
+                                <small>2017.07.12</small>
+                            </h4>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                    This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                    <div class="card-actions">
+                                        <a href="#" class="btn">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <ul class="card-list">
-  
-                            <li class="card">
-                              <a class="card-image" href="https://michellezauner.bandcamp.com/album/psychopomp-2" target="_blank" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/psychopomp-100.jpg);" data-image-full="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/psychopomp-500.jpg">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/psychopomp-100.jpg" alt="Psychopomp" />
-                              </a>
-                              <a class="card-description" href="https://michellezauner.bandcamp.com/album/psychopomp-2" target="_blank">
-                                <h2>Starting Strength 3rd</h2>
-                                <p>처음 시작 할때 좋은 스트렝스 훈련법 </p>
-                              </a>
-                            </li>
-                            
-                            <li class="card">
-                              <a class="card-image" href="https://inlovewithaghost.bandcamp.com/album/lets-go" target="_blank" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/lets-go-100.jpg);" data-image-full="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/lets-go-500.jpg">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/lets-go-100.jpg" alt="let's go" />
-                              </a>
-                              <a class="card-description" href="https://inlovewithaghost.bandcamp.com/album/lets-go" target="_blank">
-                                <h2>let's go</h2>
-                                <p>In Love With A Ghost</p>
-                              </a>
-                            </li>
-                            
-                            <li class="card">
-                              <a class="card-image" href="https://vulfpeck.bandcamp.com/album/the-beautiful-game" target="_blank" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/beautiful-game-100.jpg);" data-image-full="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/beautiful-game-500.jpg">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/beautiful-game-100.jpg" alt="The Beautiful Game" />
-                              </a>
-                              <a class="card-description" href="https://vulfpeck.bandcamp.com/album/the-beautiful-game" target="_blank">
-                                <h2>The Beautiful Game</h2>
-                                <p>Vulfpeck</p>
-                              </a>
-                            </li>
-                            
-                            <li class="card">
-                              <a class="card-image" href="https://convergecult.bandcamp.com/album/jane-doe" target="_blank" style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/jane-doe-100.jpg);" data-image-full="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/jane-doe-500.jpg">
-                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/310408/jane-doe-100.jpg" alt="Jane Doe" />
-                              </a>
-                              <a class="card-description" href="https://convergecult.bandcamp.com/album/jane-doe" target="_blank">
-                                <h2>Jane Doe</h2>
-                                <p>Converge</p>
-                              </a>
-                            </li>
-                            
-                          </ul>
-                        <!-- <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
+                </div>
+
+                <hr>
+                <div class="container fitness-area">
+                    <div class="fitness-figure">
+                        <img src="./assets/img/under_500.PNG" alt="">
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
+                    <h3 class="text-center mb-5">3대 운동</h3>
+                    <div class="row">
+                        <div class="text-3start">
+                            <div class="box-base">
+                                <h4 class="box-tit">시작 동기</h4>
+                                <ul class="bul-dot">
+                                    <li>헬스장 처음 등록하고 혼자 운동 하고 있는데 헬스장 오래다니신 형님이 같이 운동하자해서 시작</li>                                                                  
+                                </ul>
                             </div>
-                        </a>
-                    </div> -->
-                    
-                    
-                    <!-- <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
+                        </div>
+                        <div class="col-lg-6 workout">
+                            <div class="box-base">
+                                <h4 class="box-tit">장점</h4>
+                                <ul class="bul-dot">
+                                    <li>우리 몸이 가지고 있는 가장 큰 근육들을 사용하므로 중요근육 발달  </li>
+                                    <li>꾸준한 무게 증가 할 시 사용하지 않던 근신경 발달로 근육 발달에 도움</li>
+                                    <li>코어 근육 밸런스 및 안정성 발달 </li>
+                                    <li>운동 수행 능력 증가</li>
+                                </ul>
                             </div>
-                        </a>
+                        </div>
+                        <div class="col-lg-6 workout_kind">
+                            <div class="box-base">
+                                <h4 class="box-tit">종류</h4>
+                                <ul class="bul-dot">
+                                    <li>1.Bench press
+                                        <p>가슴 운동으로 주로 대흉근 자극에 중점 </p>
+                                    </li>
+                                        
+                                    <li>2.Squat
+                                        <p>주로 하체 운동이나 몸의 벨런스를 잡기위해 코어근육을 많이 활성화됨 전신운동으로 봐도 무방 함</p>
+                                    </li>
+                                        
+                                    <li>3.Dead Lift
+                                        <p>흔히들 등운동으로 알고 있으나 전신의 근육을 활용하여 운동하게됨 </p>
+                                    </li>
+                                        
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                            <div class="portfolio-box-caption p-3">
-                                <div class="project-category text-white-50">Category</div>
-                                <div class="project-name">Project Name</div>
-                            </div>
-                        </a>
-                    </div> -->
                 </div>
             </div>
-        </div>
-        <!-- Call to action-->
-        <section class="page-section bg-dark text-white">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-                <!-- <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now! 자기소개</a> -->
-            </div>
         </section>
+
         <!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container px-4 px-lg-5">
+        <section class="page-section type-divide" id="contact">
+            <div class="container px-8 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6 text-center">
-                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <h2 class="mt-0">CONTACT</h2>
                         <hr class="divider" />
-                        <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
@@ -608,54 +406,35 @@
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <label for="name">이름</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">필수입력</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                <label for="email">이메일</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">이메일은 필수 입력입니다.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">이메일 주소가 유효하지 않습니다.</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                <label for="phone">연락쳐</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">연락처는 필수 입력입니다.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
                                 <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                <label for="message">메시지</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">메시지는 필수 입력입니다.</div>
                             </div>
                             <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
                             <!---->
                             <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
+                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">확인</button></div>
                         </form>
-                    </div>
-                </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                        <div>+1 (555) 123-4567</div>
                     </div>
                 </div>
             </div>
